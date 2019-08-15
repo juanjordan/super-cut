@@ -1,0 +1,1 @@
+ffmpeg -i big.mp3 -af silencedetect=noise=0.5 -f null - 2>&1 | grep -Eo "silence_(start|end): (\-?\d+\.\d+)" | tee log.txt
